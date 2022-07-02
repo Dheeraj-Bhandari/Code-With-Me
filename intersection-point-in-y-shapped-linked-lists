@@ -1,0 +1,25 @@
+//https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1/?page=1&category[]=Linked%20List&sortBy=submissions#
+
+class Intersect
+{
+    //Function to find intersection point in Y shaped Linked Lists.
+	int intersectPoint(Node h1, Node h2)
+	{
+         // code here
+         
+         Node d1 = h1;
+         Node d2 = h2;
+         while(d1!=d2){
+             if(d1==null){
+                 d1 = h2;
+             }
+             else if(d2==null){
+                 d2 = h1;
+             }
+             d1 = d1.next;
+             d2  =d2.next;
+         }
+         if(d1==null && d2==null){
+             return -1;
+         }
+        else  return d1.data;
